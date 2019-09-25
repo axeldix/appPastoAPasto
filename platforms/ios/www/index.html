@@ -1,0 +1,756 @@
+<title>Rx: PastoAPasto NOBORRAR</title>
+
+<meta charset="utf-8"></meta>
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1">
+</meta>
+
+<link
+  href="applab/fontawesome-webfont.woff2"
+  rel="preload"
+  as="font">
+</link>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+
+<script>function setExportConfig(config) { window.EXPORT_OPTIONS = config; }</script>
+
+<script src="https://studio.code.org/projects/applab/iTMkHx4wpkU9ofPMRq85h32T7vw-HdeyzOyAfTHi6JM/export_config?script_call=setExportConfig">
+</script>
+
+<script src="applab/applab-api.js"></script>
+
+<script src="https://www.google.com/jsapi"></script>
+
+<link
+  href="applab/applab.css"
+  rel="stylesheet">
+</link>
+
+<link
+  href="style.css"
+  rel="stylesheet">
+</link>
+
+<div
+  id="divApplab"
+  class="appModern running"
+  tabindex="1"
+  style="width: 100%; height: 100%; display: block;">
+  <div
+    id="ScreenINICIO"
+    class="screen"
+    tabindex="1"
+    style="display: flex; justify-content: space-between; height: 100%; width: 100%; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255);"
+    data-theme="classic">
+    <!-- style="display: block; height: 100%; width: 100%; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255);"
+    data-theme="classic"> -->
+    <button
+      id="btn_Comenzar"
+      style="padding: 0px; margin: 0px; height: 30px; width: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 55px; top: 600px;">
+      Comenzar
+    </button>
+
+    <label
+      id="label10"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 196px; height: 19px; position: absolute; left: 55px; top: 30px;">
+      Paso 1: Datos Establecimiento
+    </label>
+
+    <label
+      id="label14"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 158px; height: 19px; position: absolute; left: 55px; top: 60px;">
+      Paso 2: Datos generales
+    </label>
+
+    <label
+      id="label15"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 168px; height: 19px; position: absolute; left: 55px; top: 95px;">
+      Paso 3: Kg MV Disponible
+    </label>
+
+    <label
+      id="label17"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 175px; height: 19px; position: absolute; left: 55px; top: 135px;">
+      Paso 4: Kg MV Remanente
+    </label>
+
+    <label
+      id="label18"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 126px; height: 19px; position: absolute; left: 55px; top: 170px;">
+      Paso 5: Resultados
+    </label>
+
+    <button
+      id="btnPantallaBusqueda"
+      style="padding: 0px; margin: 0px; height: 30px; width: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 180px; top: 600px;">
+      Buscar
+    </button>
+  </div>
+
+  <div
+    id="screenPaso3"
+    class="screen"
+    tabindex="1"
+    style="height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255); display: none;"
+    data-theme="classic">
+    <label
+      id="label2"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 170px; height: 30px; position: absolute; left: 85px; top: 40px;">
+      Ingrese kg MV disponible
+    </label>
+
+    <input
+      id="ti_MVdisp2"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 25px; top: 130px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp3"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 25px; top: 190px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp8"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 170px; top: 130px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp9"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 165px; top: 185px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp10"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 155px; top: 240px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp11"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 175px; top: 300px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp4"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 20px; top: 245px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp5"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 15px; top: 290px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp6"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 20px; top: 345px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp7"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 165px; top: 80px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp1"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 25px; top: 75px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVdisp12"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 170px; top: 350px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <button
+      id="btn_paso1P3"
+      style="padding: 0px; margin: 0px; height: 25px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: -5px; top: 2.22045e-16px;">
+      Paso 1
+    </button>
+
+    <button
+      id="btn_paso2P3"
+      style="padding: 0px; margin: 0px; height: 25px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 50px; top: 0px;">
+      Paso 2
+    </button>
+
+    <button
+      id="btn_paso4P3"
+      style="padding: 0px; margin: 0px; height: 25px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 180px; top: -1.11022e-16px;">
+      Paso 4
+    </button>
+
+    <button
+      id="btn_paso5P3"
+      style="padding: 0px; margin: 0px; height: 25px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 245px; top: 2.22045e-16px;">
+      Paso 5
+    </button>
+
+    <label
+      id="label20"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 49px; height: 19px; position: absolute; left: 125px; top: 0px;">
+      Paso 3
+    </label>
+
+    <button
+      id="btn_P3aInicio"
+      style="padding: 0px; margin: 0px; height: 25px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 135px; top: 415px;">
+      Inicio
+    </button>
+  </div>
+
+  <div
+    id="screenPaso4"
+    class="screen"
+    tabindex="1"
+    style="height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255); display: none;"
+    data-theme="classic">
+    <label
+      id="label3"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 170px; height: 30px; position: absolute; left: 80px; top: 55px;">
+      Ingrese kg MV remanente
+    </label>
+
+    <input
+      id="ti_MVrem2"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 30px; top: 140px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem3"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 30px; top: 195px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem9"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 170px; top: 195px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem10"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 170px; top: 250px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem11"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 170px; top: 305px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem12"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 170px; top: 360px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem4"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 30px; top: 250px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem5"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 30px; top: 305px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem6"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 30px; top: 360px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem8"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 170px; top: 140px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem1"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 25px; top: 80px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <input
+      id="ti_MVrem7"
+      style="margin: 0px; width: 135px; height: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 165px; top: 85px; padding: 5px; background-color: rgb(255, 255, 255);"/>
+    <button
+      id="btn_Paso1P4"
+      style="padding: 0px; margin: 0px; height: 30px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 5px; top: 10px;">
+      Paso 1
+    </button>
+
+    <button
+      id="btn_Paso2P4"
+      style="padding: 0px; margin: 0px; height: 30px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 65px; top: 10px;">
+      Paso 2
+    </button>
+
+    <button
+      id="btn_Paso3P4"
+      style="padding: 0px; margin: 0px; height: 30px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 125px; top: 10px;">
+      Paso 3
+    </button>
+
+    <button
+      id="btn_Paso5P4"
+      style="padding: 0px; margin: 0px; height: 30px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 255px; top: 10px;">
+      Paso 5
+    </button>
+
+    <label
+      id="label1"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 55px; height: 25px; position: absolute; left: 190px; top: 15px;">
+      Paso 4
+    </label>
+
+    <button
+      id="btn_P4aInicio"
+      style="padding: 0px; margin: 0px; height: 30px; width: 55px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 140px; top: 415px;">
+      Inicio
+    </button>
+  </div>
+
+  <div
+    id="screenPaso2"
+    class="screen"
+    tabindex="1"
+    style="height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255); display: none;"
+    data-theme="classic">
+    <input
+      id="text_inputSupparcela"
+      style="margin: 0px; width: 240px; height: 40px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 35px; top: 120px; padding: 5px; background-color: rgb(255, 255, 255);"
+      placeholder="Hectareas"/>
+    <input
+      id="text_inputPorcMS"
+      style="margin: 0px; width: 240px; height: 35px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 40px; top: 220px; padding: 5px; background-color: rgb(255, 255, 255);"
+      placeholder="%MS"/>
+    <input
+      id="text_inputNrovaca"
+      style="margin: 0px; width: 235px; height: 35px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 40px; top: 300px; padding: 5px; background-color: rgb(255, 255, 255);"
+      placeholder="Nro Vacas"/>
+    <input
+      id="text_inputCuadrante"
+      style="margin: 0px; width: 240px; height: 35px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(0, 0, 0); border-style: solid; border-width: 1px; border-color: rgb(153, 153, 153); border-radius: 0px; position: absolute; left: 40px; top: 375px; padding: 5px; background-color: rgb(255, 255, 255);"
+      placeholder="Area cuadrante (m2)"/>
+    <label
+      id="label19"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 55px; height: 25px; position: absolute; left: 80px; top: 20px;">
+      Paso 2
+    </label>
+
+    <button
+      id="btn_Paso1P2"
+      style="padding: 0px; margin: 0px; height: 30px; width: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 5px; top: 20px;">
+      Paso 1
+    </button>
+
+    <button
+      id="btn_Paso3P2"
+      style="padding: 0px; margin: 0px; height: 30px; width: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 145px; top: 20px;">
+      Paso 3
+    </button>
+
+    <button
+      id="btn_Paso4P2"
+      style="padding: 0px; margin: 0px; height: 30px; width: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 190px; top: 20px;">
+      Paso 4
+    </button>
+
+    <button
+      id="btn_Paso5P2"
+      style="padding: 0px; margin: 0px; height: 30px; width: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 260px; top: 20px;">
+      Paso 5
+    </button>
+
+    <label
+      id="label24"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 205px; height: 35px; position: absolute; left: 35px; top: 90px;">
+      Superficie de parcela ( Ha. )
+    </label>
+
+    <label
+      id="label25"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 205px; height: 35px; position: absolute; left: 45px; top: 175px;">
+      Porcentaje de Materia Seca
+    </label>
+
+    <label
+      id="label30"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 205px; height: 35px; position: absolute; left: 45px; top: 260px;">
+      Numero de Vacas
+    </label>
+
+    <label
+      id="label31"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 205px; height: 35px; position: absolute; left: 50px; top: 340px;">
+      Area Cuadrante ( m2 )
+    </label>
+
+    <button
+      id="btn_P2aInicio"
+      style="padding: 0px; margin: 0px; height: 30px; width: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 110px; top: 415px;">
+      Inicio
+    </button>
+  </div>
+
+  <div
+    id="screenPaso5"
+    class="screen"
+    tabindex="1"
+    style="height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255); display: none;"
+    data-theme="classic">
+    <label
+      id="label4"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 40px; height: 25px;">
+      Kg MS/Ha Disponible
+    </label>
+
+    <label
+      id="lbl_ResMSdisp"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 70px; height: 25px;">
+      text
+    </label>
+
+    <label
+      id="label6"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 100px; height: 25px;">
+      Kg MS/Ha Remanente
+    </label>
+
+    <label
+      id="lbl_ResMSrem"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 130px; height: 25px;">
+      text
+    </label>
+
+    <label
+      id="label8"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 220px; height: 25px;">
+      Consumo (KgMS/animal/turno)
+    </label>
+
+    <label
+      id="lbl_ResConsumo"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 35px; top: 255px;">
+      text
+    </label>
+
+    <button
+      id="btn_Paso1P5"
+      style="padding: 0px; margin: 0px; height: 25px; width: 50px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 10px; top: 10px;">
+      Paso 1
+    </button>
+
+    <button
+      id="btn_Paso2P5"
+      style="padding: 0px; margin: 0px; height: 25px; width: 45px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 65px; top: 10px;">
+      Paso 2
+    </button>
+
+    <button
+      id="btn_Paso3P5"
+      style="padding: 0px; margin: 0px; height: 20px; width: 65px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 115px; top: 10px;">
+      Paso3
+    </button>
+
+    <button
+      id="btn_Paso4P5"
+      style="padding: 0px; margin: 0px; height: 20px; width: 65px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; color: rgb(255, 255, 255); background-color: rgb(26, 188, 156); position: absolute; left: 185px; top: 10px;">
+      Paso 4
+    </button>
+
+    <label
+      id="label5"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 0px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 55px; height: 30px; position: absolute; left: 260px; top: 10px;">
+      Paso 5
+    </label>
+
+    <label
+      id="label7"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 210px; position: absolute; left: 35px; top: 160px; height: 25px;">
+      Consumo Kg M.S./Ha.
+    </label>
+
+    <label
+      id="lbl_ResConsumoMsha"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 215px; height: 20px; position: absolute; left: 35px; top: 195px;">
+      text
+    </label>
+
+    <label
+      id="label11"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 290px; height: 20px;">
+      % Aprovechamiento
+    </label>
+
+    <label
+      id="lbl_ResAprovechamiento"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 35px; top: 320px;">
+      text
+    </label>
+
+    <label
+      id="label9"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(214, 24, 24); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 355px; height: 25px;">
+      m2/Animal
+    </label>
+
+    <label
+      id="lbl_m2Animal"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 35px; top: 385px;">
+      text
+    </label>
+
+    <button
+      id="btn_crearRegistro"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 25px; width: 115px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 100px; top: 420px;">
+      Guardar - Save
+    </button>
+
+    <label
+      id="lbl_RegistroCreado"
+      class="design-mode-hidden"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; color: rgb(51, 51, 51); background-color: rgb(226, 15, 15); border-color: rgb(153, 153, 153); border-radius: 14px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 25px; padding: 2px; width: 170px; height: 56px; position: absolute; left: 80px; top: 185px; text-align: center;">
+      Registro Creado
+    </label>
+  </div>
+
+  <div
+    id="screenPaso1"
+    class="screen"
+    tabindex="1"
+    data-theme="classic"
+    style="height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255); display: none;">
+    <input
+      id="text_inputFecha"
+      style="margin: 0px; width: 205px; height: 40px; border-style: solid; background-color: rgb(255, 255, 255); border-radius: 0px; border-width: 1px; border-color: rgb(153, 153, 153); color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 5px; position: absolute; left: 40px; top: 90px;"
+      placeholder="dd/mm/aaaa"/>
+    <label
+      id="label13"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 250px; height: 40px; position: absolute; left: 45px; top: 70px;">
+      Fecha :
+    </label>
+
+    <label
+      id="label16"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 125px; height: 20px; position: absolute; left: 40px; top: 155px;">
+      Establecimiento
+    </label>
+
+    <input
+      id="text_inputEstablecimiento"
+      style="margin: 0px; width: 205px; height: 40px; border-style: solid; background-color: rgb(255, 255, 255); border-radius: 0px; border-width: 1px; border-color: rgb(153, 153, 153); color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 5px; position: absolute; left: 35px; top: 175px;"/>
+    <label
+      id="label21"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 85px; height: 25px; position: absolute; left: 40px; top: 285px;">
+      Lote
+    </label>
+
+    <input
+      id="text_inputLOte"
+      style="margin: 0px; width: 160px; height: 40px; border-style: solid; background-color: rgb(255, 255, 255); border-radius: 0px; border-width: 1px; border-color: rgb(153, 153, 153); color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 5px; position: absolute; left: 40px; top: 305px;"/>
+    <label
+      id="label22"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 120px; height: 30px; position: absolute; left: 45px; top: 345px;">
+      Recurso
+    </label>
+
+    <input
+      id="text_inputRecurso"
+      style="margin: 0px; width: 210px; height: 40px; border-style: solid; background-color: rgb(255, 255, 255); border-radius: 0px; border-width: 1px; border-color: rgb(153, 153, 153); color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 5px; position: absolute; left: 40px; top: 370px;"/>
+    <label
+      id="label23"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 55px; height: 25px; position: absolute; left: 15px; top: 20px;">
+      Paso1
+    </label>
+
+    <button
+      id="btn_paso2p1"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 50px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 75px; top: 20px;">
+      Paso2
+    </button>
+
+    <button
+      id="btn_paso3p1"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 50px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 135px; top: 20px;">
+      Paso3
+    </button>
+
+    <button
+      id="btn_paso4p1"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 50px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 200px; top: 20px;">
+      Paso4
+    </button>
+
+    <button
+      id="btn_paso5p1"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 50px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 260px; top: 20px;">
+      Paso5
+    </button>
+
+    <label
+      id="msj_errorFecha"
+      class="design-mode-hidden"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 205px; height: 20px; position: absolute; left: 40px; top: 130px;">
+      falta completar fecha
+    </label>
+
+    <label
+      id="label27"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; background-color: rgba(0, 0, 0, 0); border-radius: 0px; border-width: 0px; border-color: rgb(153, 153, 153); color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 125px; height: 20px; position: absolute; left: 40px; top: 220px;">
+      Localidad
+    </label>
+
+    <input
+      id="text_inputLocalidad"
+      style="margin: 0px; width: 205px; height: 40px; border-style: solid; background-color: rgb(255, 255, 255); border-radius: 0px; border-width: 1px; border-color: rgb(153, 153, 153); color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 5px; position: absolute; left: 35px; top: 245px;"/>
+    <button
+      id="btn_test1"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 80px; background-color: rgb(26, 188, 156); color: rgb(255, 255, 255); border-color: rgb(0, 0, 0); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 205px; top: 415px;">
+      Test1
+    </button>
+
+    <button
+      id="btn_P1aInicio"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 80px; background-color: rgb(26, 188, 156); color: rgb(255, 255, 255); border-color: rgb(0, 0, 0); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 65px; top: 415px;">
+      Inicio
+    </button>
+  </div>
+
+  <div
+    id="PantallaResultadoBusqueda"
+    class="screen"
+    tabindex="1"
+    data-theme="classic"
+    style="height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255); display: none;">
+    <label
+      id="label12"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 40px; height: 25px;">
+      Kg MS/Ha Disponible
+    </label>
+
+    <label
+      id="lbl_MSdispBus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 70px; height: 25px;">
+    </label>
+
+    <label
+      id="label28"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 100px; height: 25px;">
+      Kg MS/Ha Remanente
+    </label>
+
+    <label
+      id="lbl_MSremBus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 130px; height: 25px;">
+    </label>
+
+    <label
+      id="label32"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 220px; height: 25px;">
+      Consumo (KgMS/animal/turno)
+    </label>
+
+    <label
+      id="lbl_ConsaniBus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 35px; top: 255px;">
+    </label>
+
+    <label
+      id="label35"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 210px; position: absolute; left: 35px; top: 160px; height: 25px;">
+      Consumo Kg M.S./Ha.
+    </label>
+
+    <label
+      id="lbl_ConsHABus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 215px; height: 20px; position: absolute; left: 35px; top: 195px;">
+    </label>
+
+    <label
+      id="label37"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 300px; height: 20px;">
+      % Aprovechamiento
+    </label>
+
+    <label
+      id="lbl_AprovBus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 35px; top: 330px;">
+    </label>
+
+    <label
+      id="label39"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(214, 24, 24); border-radius: 0px; width: 240px; position: absolute; left: 35px; top: 365px; height: 25px;">
+      m2/Animal
+    </label>
+
+    <label
+      id="lbl_m2aniBus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 35px; top: 395px;">
+    </label>
+
+    <label
+      id="lbl_fechamedbus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 100px; position: absolute; left: 85px; top: 5px; height: 25px;">
+    </label>
+
+    <label
+      id="label42"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 50px; position: absolute; left: 30px; top: 5px; height: 25px;">
+      Fecha:
+    </label>
+
+    <label
+      id="label43"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 40px; position: absolute; left: 190px; top: 5px; height: 25px;">
+      Lote:
+    </label>
+
+    <label
+      id="lbl_loteMedbus"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 70px; position: absolute; left: 235px; top: 5px; height: 25px;">
+    </label>
+
+    <button
+      id="btn_salirResBus"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 80px; background-color: rgb(26, 188, 156); color: rgb(255, 255, 255); border-color: rgb(0, 0, 0); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 105px; top: 420px;">
+      Salir
+    </button>
+  </div>
+
+  <div
+    id="ScreenBusqueda"
+    class="screen"
+    tabindex="1"
+    data-theme="classic"
+    style="height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255); display: none;">
+    <label
+      id="label50"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 25px; top: 95px;">
+      Fecha
+    </label>
+
+    <label
+      id="lbl_LoteScreenBus"
+      class="design-mode-hidden"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 25px; top: 160px;">
+      Lote
+    </label>
+
+    <button
+      id="btn_Buscar"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 25px; width: 115px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 100px; top: 285px;">
+      Buscar
+    </button>
+
+    <select
+      id="dd_Lote"
+      class="design-mode-hidden"
+      style="width: 200px; height: 30px; margin: 0px; border-style: solid; background-color: rgb(26, 188, 156); color: rgb(255, 255, 255); background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23ffffff%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E"); border-color: rgb(0, 0, 0); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 0px 30px 0px 10px; position: absolute; left: 30px; top: 205px;">
+    </select>
+
+    <label
+      id="label58"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; padding: 2px; background-color: rgba(0, 0, 0, 0); font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(0, 0, 0); border-radius: 0px; width: 240px; height: 25px; position: absolute; left: 25px; top: 45px;">
+      Busqueda en base de datos
+    </label>
+
+    <input
+      id="tiFechaBusqueda"
+      style="margin: 0px; width: 200px; height: 30px; border-style: solid; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); border-color: rgb(153, 153, 153); border-radius: 0px; border-width: 1px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 5px; position: absolute; left: 25px; top: 125px;"
+      placeholder="dd/mm/aa"/>
+    <label
+      id="msjFechaError"
+      class="design-mode-hidden"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; color: rgb(236, 14, 14); background-color: rgba(0, 0, 0, 0); border-color: rgb(153, 153, 153); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 120px; height: 20px; position: absolute; left: 25px; top: 70px;">
+      Fecha Invalida
+    </label>
+
+    <button
+      id="btn_MostrarResultado"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 25px; width: 210px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 50px; top: 285px;">
+      Mostrar Resultados
+    </button>
+
+    <button
+      id="btn_volverScrBus"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 25px; width: 210px; background-color: rgb(26, 188, 156); border-radius: 0px; border-width: 0px; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 50px; top: 335px;">
+      Inicio
+    </button>
+  </div>
+
+  <div
+    id="screenPreguntaSalir"
+    class="screen"
+    tabindex="1"
+    data-theme="classic"
+    style="display: none; height: 450px; width: 320px; left: 0px; top: 0px; position: absolute; z-index: 0; background-color: rgb(255, 255, 255);">
+    <label
+      id="label26"
+      style="margin: 0px; line-height: 1; overflow: hidden; overflow-wrap: break-word; max-width: 320px; border-style: solid; color: rgb(51, 51, 51); background-color: rgba(0, 0, 0, 0); border-color: rgb(153, 153, 153); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 2px; width: 155px; height: 65px; position: absolute; left: 95px; top: 60px;">
+      ¿desea volver a inicio? Se borraran los datos cargados sin guardar
+    </label>
+
+    <button
+      id="btn_volverAceptado"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 80px; background-color: rgb(26, 188, 156); color: rgb(255, 255, 255); border-color: rgb(0, 0, 0); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 60px; top: 190px;">
+      Afirmativo
+    </button>
+
+    <button
+      id="btn_volverRechazado"
+      style="padding: 0px; margin: 0px; border-style: solid; height: 30px; width: 80px; background-color: rgb(26, 188, 156); color: rgb(255, 255, 255); border-color: rgb(0, 0, 0); border-radius: 0px; border-width: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; left: 165px; top: 190px;">
+      Negativo
+    </button>
+  </div>
+</div>
